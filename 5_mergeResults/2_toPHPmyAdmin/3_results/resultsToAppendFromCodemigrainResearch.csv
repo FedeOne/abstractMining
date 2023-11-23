@@ -1,0 +1,238 @@
+"idResults0","doc_id","PMID","exp1","expType","expLow1","expHigh1","expUnit1","refExp1","outcome","result","icLow","icUpper","measureType","exp2","adjustment"
+NA,"10099859_1","10099859","male sex",NA,NA,NA,NA,NA,"relapse",3.9,1.3,11.6,"odd ratio (OR)",NA,NA
+NA,"10099859_2","10099859","combined analgesic drugs",NA,NA,NA,NA,NA,"relapse",3.8,1.4,10.3,"odd ratio (OR)",NA,NA
+NA,"10099859_3","10099859","naturopathy",NA,NA,NA,NA,NA,"naturopathy",6,1.2,29.3,"odd ratio (OR)",NA,NA
+NA,"10099859_4","10099859","tension type headache",NA,NA,NA,NA,NA,"tension type headache",1.9,0.6,53,"odd ratio (OR)",NA,NA
+NA,"10535656_1","10535656","Rape",NA,NA,NA,NA,NA,"headache",1.7,1.4,2.07,"odd ratio (OR)",NA,NA
+NA,"10535656_2","10535656","sexually assaulted in childhood",NA,NA,NA,NA,NA,"headache",1.89,1.19,2.99,"odd ratio (OR)",NA,NA
+NA,"11448661_1","11448661","",NA,NA,NA,NA,NA,"headache improvement",2,1.6,2.4,"relative risk (RR)",NA,NA
+NA,"12034414_2","12034414","dose response",NA,NA,NA,NA,NA,"headache",0.69,0.62,0.76,"relative risk (RR)",NA,NA
+NA,"12076420_1","12076420","more rather than less bed rest",NA,NA,NA,NA,NA,"postural headache",1.21,0.94,1.55,"odd ratio (OR)",NA,NA
+NA,"15159464_1","15159464","Having taken antiheadache medications prior to ED presentation",NA,NA,NA,NA,NA,"Having taken antiheadache medications prior to ED presentation",2.63,1.53,4.51,"odd ratio (OR)",NA,NA
+NA,"15159464_2","15159464","Hospital D",NA,NA,NA,NA,NA,"Hospital D",6.32,2.76,14.46,"odd ratio (OR)",NA,NA
+NA,"15159464_3","15159464","urgent triage score",NA,NA,NA,NA,NA,"urgent triage score",0.4,0.24,0.65,"odd ratio (OR)",NA,NA
+NA,"15159464_4","15159464","longer duration of headache",NA,NA,NA,NA,NA,"longer duration of headache",0.994,0.99,495,"odd ratio (OR)",NA,NA
+NA,"15689193_1","15689193","HIT score",NA,NA,NA,NA,NA,"Recognition of migraine",1.105,1.056,1.157,"odd ratio (OR)",NA,NA
+NA,"15689193_2","15689193","patient age",NA,NA,NA,NA,NA,"Recognition of migraine",2.942,1.286,5.025,"odd ratio (OR)",NA,NA
+NA,"15689193_3","15689193","age",NA,NA,NA,NA,NA,"patient age",1.051,1,1.104,"odd ratio (OR)",NA,NA
+NA,"16554494_1","16554494","Homozygous carriers of the G allele",NA,NA,NA,NA,NA,"cluster headache",1.97,1.32,2.92,"odd ratio (OR)",NA,NA
+NA,"17183019_1","17183019","Environmental",NA,NA,NA,NA,NA,"headache",0.18,0.11,0.29,"odd ratio (OR)",NA,NA
+NA,"17183019_2","17183019","Environmental",NA,NA,NA,NA,NA,"headache",0.63,0.42,0.94,"odd ratio (OR)",NA,NA
+NA,"17563843_2","17563843","fixed effects",NA,NA,NA,NA,NA,"cluster headache",1.58,1.27,1.95,"odd ratio (OR)",NA,NA
+NA,"17563843_3","17563843","both random",NA,NA,NA,NA,NA,"cluster headache",1.55,1.14,2.12,"odd ratio (OR)",NA,NA
+NA,"17563843_4","17563843","fixed effects",NA,NA,NA,NA,NA,"fixed effects",1.75,1.37,2.25,"odd ratio (OR)",NA,NA
+NA,"17563843_5","17563843","both random",NA,NA,NA,NA,NA,"both random",1.69,1.11,2.58,"odd ratio (OR)",NA,NA
+NA,"17635971_1","17635971","conservative treatment",NA,NA,NA,NA,NA,"headache",0.64,0.43,0.96,"relative risk (RR)",NA,NA
+NA,"17635971_2","17635971","conservative treatment",NA,NA,NA,NA,NA,"headache",0.18,0.06,0.53,"relative risk (RR)",NA,NA
+NA,"18047499_1","18047499","hypothesis  dexamethasone",NA,NA,NA,NA,NA,"relapses",0.6,0.3,1.3,"odd ratio (OR)",NA,NA
+NA,"18047499_2","18047499","hypothesis  dexamethasone",NA,NA,NA,NA,NA,"relapses",0.6,0.3,1.3,"odd ratio (OR)",NA,NA
+NA,"18047499_3","18047499","headache pain was incompletely relieved",NA,NA,NA,NA,NA,"relapse",2.2,1.1,5.4,"odd ratio (OR)",NA,NA
+NA,"18156535_1","18156535","",NA,NA,NA,NA,NA,"recurrent headache",0.69,0.33,1.45,"relative risk (RR)",NA,NA
+NA,"18156535_2","18156535","phenothiazine",NA,NA,NA,NA,NA,"recurrent headache",0.33,0.11,1.05,"relative risk (RR)",NA,NA
+NA,"18646121_1","18646121","sham therapy",NA,NA,NA,NA,NA,"migraine headaches",5.97,1.46,24.38,"relative risk (RR)",NA,NA
+NA,"18646121_2","18646121","hyperbaric oxygen therapy",NA,NA,NA,NA,NA,"cluster headache",11.38,0.77,167.85,"relative risk (RR)",NA,NA
+NA,"18646121_3","18646121","while normobaric oxygen therapy",NA,NA,NA,NA,NA,"cluster headache",7.88,1.13,54.66,"relative risk (RR)",NA,NA
+NA,"18646121_4","18646121","ergotamine",NA,NA,NA,NA,NA,"ergotamine",1.17,0.94,1.46,"relative risk (RR)",NA,NA
+NA,"18976336_1","18976336","",NA,NA,NA,NA,NA,"moderate or severe headache",0.87,0.8,0.95,"relative risk (RR)",NA,NA
+NA,"19020156_1","19020156","late follow up period",NA,NA,NA,NA,NA,"",1.19,1.08,1.3,"relative risk (RR)",NA,NA
+NA,"19020156_2","19020156","late follow up period",NA,NA,NA,NA,NA,"late follow up period",1.22,1.04,1.43,"relative risk (RR)",NA,NA
+NA,"19020156_3","19020156","response rate",NA,NA,NA,NA,NA,"response rate",1.49,1.02,2.17,"relative risk (RR)",NA,NA
+NA,"19828484_1","19828484","",NA,NA,NA,NA,NA,"",0.3,0.1,0.7,"odd ratio (OR)",NA,NA
+NA,"19828484_2","19828484","piritramide",NA,NA,NA,NA,NA,"piritramide",0.2,0.1,0.5,"odd ratio (OR)",NA,NA
+NA,"20091522_1","20091522","no treatment",NA,NA,NA,NA,NA,"post dural puncture headache",0.11,0.02,0.64,"odd ratio (OR)",NA,NA
+NA,"20091522_2","20091522","conservative treatment",NA,NA,NA,NA,NA,"conservative treatment",0.06,0.03,0.14,"odd ratio (OR)",NA,NA
+NA,"20091522_3","20091522","epidural saline patch",NA,NA,NA,NA,NA,"post dural puncture headache",0.16,0.04,0.55,"odd ratio (OR)",NA,NA
+NA,"20091522_4","20091522","conservative treatment",NA,NA,NA,NA,NA,"post dural puncture headache",0.18,0.04,0.76,"odd ratio (OR)",NA,NA
+NA,"20091522_5","20091522","sham procedure",NA,NA,NA,NA,NA,"post dural puncture headache",0.04,0,0.39,"odd ratio (OR)",NA,NA
+NA,"20682567_1","20682567","prophylactic epidural blood patch",NA,NA,NA,NA,NA,"headache after prophylactic epidural blood patch",0.48,0.23,0.99,"relative risk (RR)",NA,NA
+NA,"21435315_1","21435315","butyrophenone",NA,NA,NA,NA,NA,"subjective headache relief",8.08,1.54,42.3,"odd ratio (OR)",NA,NA
+NA,"21435315_2","21435315","benign headache",NA,NA,NA,NA,NA,"objective headache relief",2.96,1.36,6.43,"odd ratio (OR)",NA,NA
+NA,"21526365_1","21526365","random efficacy model",NA,NA,NA,NA,NA,"Western medicine therapy",1.46,1.21,1.75,"relative risk (RR)",NA,NA
+NA,"21526365_2","21526365","fixed efficacy model",NA,NA,NA,NA,NA,"acupuncture therapy",3.35,1.92,5.82,"relative risk (RR)",NA,NA
+NA,"21700646_1","21700646","more than 150 units of acute treatments",NA,NA,NA,NA,NA,"headache",3.1,1.1,9.3,"odd ratio (OR)",NA,NA
+NA,"21848948_1","21848948","fasting",NA,NA,NA,NA,NA,"first of Ramadan"" headache",3.19,1.68,6.06,"odd ratio (OR)",NA,NA
+NA,"22354262_1","22354262","CCBs",NA,NA,NA,NA,NA,"headache",0.75,0.69,0.82,"odd ratio (OR)",NA,NA
+NA,"22354262_2","22354262","CCBs",NA,NA,NA,NA,NA,"headache",0.75,0.69,0.82,"odd ratio (OR)",NA,NA
+NA,"22492572_1","22492572","age â¤ 50 years",NA,NA,NA,NA,NA,"age â¤ 50 years",4.636,1.414,15.198,"odd ratio (OR)",NA,NA
+NA,"22492572_2","22492572","hypertension",NA,NA,NA,NA,NA,"hypertension",0.232,0.095,0.571,"odd ratio (OR)",NA,NA
+NA,"22492572_3","22492572","packing attenuation",NA,NA,NA,NA,NA,"headache",3.619,1.428,9.174,"odd ratio (OR)",NA,NA
+NA,"22492572_4","22492572","previous headache history",NA,NA,NA,NA,NA,"previous headache history",2.769,1.12,6.849,"odd ratio (OR)",NA,NA
+NA,"22492572_5","22492572","packing attenuation of >25%",NA,NA,NA,NA,NA,"a packing attenuation of >25%",3.774,1.32,10.79,"odd ratio (OR)",NA,NA
+NA,"22492572_6","22492572","hypertension",NA,NA,NA,NA,NA,"headache",3.515,1.233,10.021,"odd ratio (OR)",NA,NA
+NA,"23846960_1","23846960","mobilization",NA,NA,NA,NA,NA,"post dural puncture headache",1.3,1.09,1.55,"relative risk (RR)",NA,NA
+NA,"23846960_2","23846960","",NA,NA,NA,NA,NA,"",1,0.75,1.32,"relative risk (RR)",NA,NA
+NA,"23846960_3","23846960","presence of any headache",NA,NA,NA,NA,NA,"headache",1.18,1.05,1.32,"relative risk (RR)",NA,NA
+NA,"24233069_1","24233069","age",NA,NA,NA,NA,NA,"post lumbar puncture headache",1.1,0.98,1.3,"odd ratio (OR)",NA,NA
+NA,"24233069_2","24233069","age",NA,NA,NA,NA,NA,"post lumbar puncture headache",3.3,1.3,8.4,"odd ratio (OR)",NA,NA
+NA,"24697284_2","24697284","17 cross sectional studies",NA,NA,NA,NA,NA,"headache",2.1,1.19,3.71,"odd ratio (OR)",NA,NA
+NA,"24697284_3","24697284","",NA,NA,NA,NA,NA,"headache",2,1.7,2.35,"odd ratio (OR)",NA,NA
+NA,"24865592_1","24865592","dexamethasone",NA,NA,NA,NA,NA,"post dural puncture headache in the postoperative follow up days",1.05,0.46,2.38,"relative risk (RR)",NA,NA
+NA,"26487467_1","26487467","SpO2",NA,NA,NA,NA,NA,"headache",1.123,1.001,1.259,"odd ratio (OR)",NA,NA
+NA,"26950232_1","26950232","",NA,NA,NA,NA,NA,"severe post dural puncture headache",0.98,0.68,1.41,"relative risk (RR)",NA,NA
+NA,"26950232_2","26950232","headache",NA,NA,NA,NA,NA,"headache",1.16,1.02,1.32,"relative risk (RR)",NA,NA
+NA,"26950232_3","26950232","bed rest",NA,NA,NA,NA,NA,"post dural puncture headache",1.24,1.04,1.48,"relative risk (RR)",NA,NA
+NA,"26950232_4","26950232","fluid supplementation",NA,NA,NA,NA,NA,"severe post dural puncture headache",0.67,0.26,1.73,"relative risk (RR)",NA,NA
+NA,"26950232_5","26950232","post dural puncture headache",NA,NA,NA,NA,NA,"post dural puncture headache",1,0.59,1.69,"relative risk (RR)",NA,NA
+NA,"26950232_6","26950232","headache after lumbar puncture",NA,NA,NA,NA,NA,"severe post dural puncture headache",0.94,0.66,1.34,"relative risk (RR)",NA,NA
+NA,"26952012_1","26952012","epidural blood patch",NA,NA,NA,NA,NA,"postdural puncture headache",0.34,0.22,0.52,"relative risk (RR)",NA,NA
+NA,"26952012_2","26952012","epidural blood patch",NA,NA,NA,NA,NA,"postdural puncture headache",0.32,0.16,0.66,"relative risk (RR)",NA,NA
+NA,"26952012_3","26952012","an epidural blood patch",NA,NA,NA,NA,NA,"an epidural blood patch",0.15,0.04,0.51,"relative risk (RR)",NA,NA
+NA,"26969188_1","26969188","headache diagnoses",NA,NA,NA,NA,NA,"referral rate (referral rate) to neurological specialist services",10,0.49,39,"relative risk (RR)",NA,NA
+NA,"27092807_1","27092807","",NA,NA,NA,NA,NA,"",2.5,2.1,3,"relative risk (RR)",NA,NA
+NA,"27092807_2","27092807","",NA,NA,NA,NA,NA,"trial 2",11,3.7,35,"relative risk (RR)",NA,NA
+NA,"27092807_3","27092807","headache frequency",NA,NA,NA,NA,NA,"headache frequency",1.3,1.09,1.5,"relative risk (RR)",NA,NA
+NA,"27092807_4","27092807","",NA,NA,NA,NA,NA,"",1.3,0.6,2.7,"odd ratio (OR)",NA,NA
+NA,"27654948_2","27654948","pain free",NA,NA,NA,NA,NA,"pain free at two hours",1.3,0.9,2,"relative risk (RR)",NA,NA
+NA,"28084009_2","28084009","Adverse events were not different between aspirin 1000 mg and placebo",NA,NA,NA,NA,NA,"Adverse events",1.1,0.8,1.5,"relative risk (RR)",NA,NA
+NA,"28084009_3","28084009","aspirin 500 mg or 650 mg and placebo",NA,NA,NA,NA,NA,"",1.3,0.8,2,"relative risk (RR)",NA,NA
+NA,"28383416_2","28383416","postdural puncture headache",NA,NA,NA,NA,NA,"postdural puncture headache",2.5,1.96,3.19,"relative risk (RR)",NA,NA
+NA,"28383416_3","28383416","severe postdural puncture headache",NA,NA,NA,NA,NA,"severe postdural puncture headache",3.27,2.15,4.96,"relative risk (RR)",NA,NA
+NA,"28383416_4","28383416","epidural blood patch",NA,NA,NA,NA,NA,"postdural puncture headache",3.69,1.96,6.95,"relative risk (RR)",NA,NA
+NA,"28388808_1","28388808","traumatic needles",NA,NA,NA,NA,NA,"post dural puncture headache",2.14,1.72,2.67,"relative risk (RR)",NA,NA
+NA,"28388808_2","28388808","26 and 27 gauge needles",NA,NA,NA,NA,NA,"26 and 27 gauge needles",6.47,2.55,16.43,"relative risk (RR)",NA,NA
+NA,"28388808_3","28388808","",NA,NA,NA,NA,NA,"post dural puncture headache",2.78,1.26,6.15,"relative risk (RR)",NA,NA
+NA,"28392178_1","28392178","the proportion of participants experiencing at least 50% reduction of headache frequency",NA,NA,NA,NA,NA,"",2.5,2.1,3,"relative risk (RR)",NA,NA
+NA,"28392178_2","28392178","",NA,NA,NA,NA,NA,"headache frequency",11,3.7,35,"relative risk (RR)",NA,NA
+NA,"28392178_3","28392178","headache frequency",NA,NA,NA,NA,NA,"headache frequency",1.3,1.09,1.5,"relative risk (RR)",NA,NA
+NA,"28392178_4","28392178","",NA,NA,NA,NA,NA,"headache frequency",1.3,0.6,2.7,"odd ratio (OR)",NA,NA
+NA,"28535561_1","28535561","post dural puncture headache",NA,NA,NA,NA,NA,"post dural puncture headache",0.61,0.44,0.86,"relative risk (RR)",NA,NA
+NA,"28535561_2","28535561","post dural puncture headache",NA,NA,NA,NA,NA,"post dural puncture headache",0.69,0.5,0.952,"relative risk (RR)",NA,NA
+NA,"28535561_3","28535561","lateral decubitus position",NA,NA,NA,NA,NA,"successful placement of spinal needle at first attempt",1,0.92,1.09,"relative risk (RR)",NA,NA
+NA,"28632763_2","28632763","Stomach Diseases",NA,NA,NA,NA,NA,"high altitude headache",0.79,0.66,0.96,"relative risk (RR)",NA,NA
+NA,"28632763_3","28632763","Stomach Diseases",NA,NA,NA,NA,NA,"severe high altitude headache",0.4,0.17,0.93,"relative risk (RR)",NA,NA
+NA,"28678882_1","28678882","post dural puncture headache",NA,NA,NA,NA,NA,"post dural puncture headache",0.823,0.7,0.967,"relative risk (RR)",NA,NA
+NA,"28678882_2","28678882","therapeutic epidural blood patch",NA,NA,NA,NA,NA,"post dural puncture headache",0.616,0.443,0.855,"relative risk (RR)",NA,NA
+NA,"28974725_1","28974725","longer daily call duration",NA,NA,NA,NA,NA,"headache",38,1.38,95,"odd ratio (OR)",NA,NA
+NA,"28974725_2","28974725","higher daily call frequency",NA,NA,NA,NA,NA,"Headache",1.38,1.18,1.61,"odd ratio (OR)",NA,NA
+NA,"28974725_3","28974725","longer daily call duration",NA,NA,NA,NA,NA,"Headache",1.62,1.34,1.98,"odd ratio (OR)",NA,NA
+NA,"28974725_4","28974725","higher daily call frequency",NA,NA,NA,NA,NA,"Headache",2.5,1.76,3.54,"odd ratio (OR)",NA,NA
+NA,"28974725_5","28974725","higher daily call frequency",NA,NA,NA,NA,NA,"higher daily call frequency",1.37,1.07,1.76,"odd ratio (OR)",NA,NA
+NA,"28974725_6","28974725","higher daily call frequency",NA,NA,NA,NA,NA,"Headache",2.52,1.78,3.58,"odd ratio (OR)",NA,NA
+NA,"29144717_1","29144717","",NA,NA,NA,NA,NA,"response rate",3.2,1.6,8.2,"relative risk (RR)",NA,NA
+NA,"29144717_2","29144717","",NA,NA,NA,NA,NA,"response rate",3.2,1.6,8.2,"relative risk (RR)",NA,NA
+NA,"29144717_3","29144717","",NA,NA,NA,NA,NA,"pain free rate for >50% of attacks",2.3,1.1,5.2,"relative risk (RR)",NA,NA
+NA,"29144717_4","29144717","ACT2",NA,NA,NA,NA,NA,"pain free attacks in 15 minutes",9.8,2.2,44.1,"odd ratio (OR)",NA,NA
+NA,"29144717_5","29144717","",NA,NA,NA,NA,NA,"responder",2.8,1,8.1,"relative risk (RR)",NA,NA
+NA,"29161336_1","29161336","number of responders",NA,NA,NA,NA,NA,"responders",1.581,0.749,3.355,"relative risk (RR)",NA,NA
+NA,"29715610_1","29715610","headache",NA,NA,NA,NA,NA,"headache",1.06,1,1.13,"relative risk (RR)",NA,NA
+NA,"29715610_2","29715610","headache",NA,NA,NA,NA,NA,"headache",0.97,0.88,1.06,"relative risk (RR)",NA,NA
+NA,"29715610_3","29715610","bupropion",NA,NA,NA,NA,NA,"headache",1.22,1.06,1.41,"relative risk (RR)",NA,NA
+NA,"29715610_4","29715610","escitalopram",NA,NA,NA,NA,NA,"headache",1.18,1.01,1.37,"relative risk (RR)",NA,NA
+NA,"30070060_1","30070060","",NA,NA,NA,NA,NA,"reduce postdural puncture headache",0.33,0.25,0.45,"relative risk (RR)",NA,NA
+NA,"30070060_2","30070060","epidural blood patch",NA,NA,NA,NA,NA,"reduced requirement of epidural blood patch",0.21,0.09,0.51,"relative risk (RR)",NA,NA
+NA,"30306350_1","30306350","all cause dementia",NA,NA,NA,NA,NA,"all cause dementia",1.24,1.09,1.41,"relative risk (RR)",NA,NA
+NA,"30306350_2","30306350","alzheimers disease",NA,NA,NA,NA,NA,"alzheimers disease",1.47,0.82,2.63,"relative risk (RR)",NA,NA
+NA,"30666527_1","30666527","cohort studies",NA,NA,NA,NA,NA,"depression",1.81,1.2,2.72,"odd ratio (OR)",NA,NA
+NA,"30666527_2","30666527","cross sectional studies",NA,NA,NA,NA,NA,"depression",2,1.64,2.43,"odd ratio (OR)",NA,NA
+NA,"30893319_1","30893319","",NA,NA,NA,NA,NA,"episodic migraine headaches",1.4,1.1,1.7,"relative risk (RR)",NA,NA
+NA,"30893319_2","30893319","chronic migraine",NA,NA,NA,NA,NA,"chronic migraine",2,1,4.3,"relative risk (RR)",NA,NA
+NA,"31316683_1","31316683","migraine",NA,NA,NA,NA,NA,"migraine",2.51,1.32,4.77,"odd ratio (OR)",NA,NA
+NA,"31316683_2","31316683","tension type headache",NA,NA,NA,NA,NA,"tension type headache",0.33,0.13,0.86,"odd ratio (OR)",NA,NA
+NA,"31316683_3","31316683","tension type headaches",NA,NA,NA,NA,NA,"tension type headaches",1.17,0.73,1.89,"odd ratio (OR)",NA,NA
+NA,"31559634_1","31559634","topiramate",NA,NA,NA,NA,NA,"headache frequency",4.9,2.7,9.1,"odd ratio (OR)",NA,NA
+NA,"31694924_1","31694924","posterior circulation stroke",NA,NA,NA,NA,NA,"posterior circulation stroke",1.92,1.4,2.64,"odd ratio (OR)",NA,NA
+NA,"31694924_2","31694924","female sex",NA,NA,NA,NA,NA,"female sex",1.25,1.07,1.46,"odd ratio (OR)",NA,NA
+NA,"31997481_1","31997481","atraumatic needle",NA,NA,NA,NA,NA,"post dural puncture headache",0.65,0.45,0.93,"odd ratio (OR)",NA,NA
+NA,"31997481_2","31997481","the cutting needle",NA,NA,NA,NA,NA,"post dural puncture headache",0.58,0.4,0.82,"odd ratio (OR)",NA,NA
+NA,"32046655_2","32046655","120 mg",NA,NA,NA,NA,NA,"",1.51,1.33,1.7,"relative risk (RR)",NA,NA
+NA,"32046655_3","32046655","240 mg",NA,NA,NA,NA,NA,"cluster headache frequency",1.58,1.43,1.76,"relative risk (RR)",NA,NA
+NA,"32046655_4","32046655","50% response",NA,NA,NA,NA,NA,"50% response",1.06,0.92,1.22,"relative risk (RR)",NA,NA
+NA,"32046655_5","32046655","75% response",NA,NA,NA,NA,NA,"75% response",1.07,0.94,1.23,"relative risk (RR)",NA,NA
+NA,"32046655_6","32046655","MHD",NA,NA,NA,NA,NA,"cluster headache frequency",1.06,0.81,1.37,"relative risk (RR)",NA,NA
+NA,"32046655_8","32046655","120 mg",NA,NA,NA,NA,NA,"migraine",1.06,0.99,1.14,"relative risk (RR)",NA,NA
+NA,"32046655_9","32046655","240 mg",NA,NA,NA,NA,NA,"migraine",1.17,1.09,1.25,"relative risk (RR)",NA,NA
+NA,"32046655_10","32046655","frequency at week 3",NA,NA,NA,NA,NA,"week 3",1.36,1,1.84,"relative risk (RR)",NA,NA
+NA,"32166843_1","32166843","pain free status",NA,NA,NA,NA,NA,"pain free status",2.27,1.16,4.44,"odd ratio (OR)",NA,NA
+NA,"32166843_2","32166843","adverse events",NA,NA,NA,NA,NA,"pain relief status within 30 min",1.8,1.17,2.78,"odd ratio (OR)",NA,NA
+NA,"32166843_3","32166843","adverse events",NA,NA,NA,NA,NA,"pain relief status at 60 min",1.93,1.2,3.1,"odd ratio (OR)",NA,NA
+NA,"32166843_4","32166843","abortive medication use",NA,NA,NA,NA,NA,"abortive medication use",0.61,0.41,0.92,"odd ratio (OR)",NA,NA
+NA,"32166843_5","32166843","adverse events",NA,NA,NA,NA,NA,"pain free status",2.15,1.27,3.66,"odd ratio (OR)",NA,NA
+NA,"32166843_6","32166843","adverse events",NA,NA,NA,NA,NA,"adverse events",1.084,0.559,2.104,"odd ratio (OR)",NA,NA
+NA,"32166843_7","32166843","adverse events",NA,NA,NA,NA,NA,"satisfaction",1.45,0.97,2.17,"odd ratio (OR)",NA,NA
+NA,"32166843_8","32166843","â¥50% responder rate",NA,NA,NA,NA,NA,"â¥50% responder rate could not be determined",3.34,0.83,13.33,"odd ratio (OR)",NA,NA
+NA,"32170522_1","32170522","total effective rate",NA,NA,NA,NA,NA,"markedly effective rate",1.27,1.01,1.61,"relative risk (RR)",NA,NA
+NA,"32170522_2","32170522","total effective rate",NA,NA,NA,NA,NA,"totally cured rate",1.31,1.09,1.57,"relative risk (RR)",NA,NA
+NA,"32170522_3","32170522","total effective rate",NA,NA,NA,NA,NA,"total effective rate",1.03,0.96,1.1,"relative risk (RR)",NA,NA
+NA,"32552576_2","32552576","Endometriosis",NA,NA,NA,NA,NA,"migraine headache",1.56,1.21,1.9,"odd ratio (OR)",NA,NA
+NA,"32552646_2","32552646","toxoplasmosis",NA,NA,NA,NA,NA,"headache",1.59,1.03,2.47,"odd ratio (OR)",NA,NA
+NA,"32870953_1","32870953","reduction of pain of 50% or more",NA,NA,NA,NA,NA,"reduction of pain",2.37,1.69,3.33,"relative risk (RR)",NA,NA
+NA,"32870953_2","32870953","reduction of pain",NA,NA,NA,NA,NA,"reduction of pain",3,1.94,4.63,"relative risk (RR)",NA,NA
+NA,"32870953_3","32870953","reduction of pain of 50% or more",NA,NA,NA,NA,NA,"reduction of pain",2.58,1.37,4.85,"relative risk (RR)",NA,NA
+NA,"33154177_2","33154177","was not associated with improved functional outcome (OR 0.90",NA,NA,NA,NA,NA,"functional outcome",0.9,0.73,1.1,"odd ratio (OR)",NA,NA
+NA,"33154177_3","33154177","",NA,NA,NA,NA,NA,"",0.64,0.4,1.02,"hazard ratio (HR)",NA,NA
+NA,"33154177_4","33154177","day 7)",NA,NA,NA,NA,NA,"",0.45,0.25,0.82,"odd ratio (OR)",NA,NA
+NA,"33154177_5","33154177","",NA,NA,NA,NA,NA,"",0.44,0.22,0.88,"odd ratio (OR)",NA,NA
+NA,"33179263_1","33179263","pooled acute medication use",NA,NA,NA,NA,NA,"Mean reduction from baseline in the overall frequency of weekly pooled acute medication use",5.52,1.02,10.01,"odd ratio (OR)",NA,NA
+NA,"33179263_2","33179263","Time Factors",NA,NA,NA,NA,NA,"",2.6,1.3,5.3,"odd ratio (OR)",NA,NA
+NA,"33236862_2","33236862","",NA,NA,NA,NA,NA,"headache rates",0.591,0.349,1.003,"odd ratio (OR)",NA,NA
+NA,"33236862_3","33236862","",NA,NA,NA,NA,NA,"headache improvement rates between posterior and anterior unruptured intracranial aneurysms",0.738,0.434,1.254,"odd ratio (OR)",NA,NA
+NA,"33343621_1","33343621","cluster headache",NA,NA,NA,NA,NA,"cluster headache",0.85,0.69,1.03,"odd ratio (OR)",NA,NA
+NA,"33343621_2","33343621","Caucasians",NA,NA,NA,NA,NA,"Caucasians",0.89,0.77,1.01,"odd ratio (OR)",NA,NA
+NA,"33343621_3","33343621","Asians",NA,NA,NA,NA,NA,"",1.65,0.8,3.41,"odd ratio (OR)",NA,NA
+NA,"33520204_1","33520204","post dural puncture headache",NA,NA,NA,NA,NA,"PDPH",0.64,0.39,1.05,"odd ratio (OR)",NA,NA
+NA,"33735636_1","33735636","",NA,NA,NA,NA,NA,"effectiveness rate",1.49,1.25,1.77,"relative risk (RR)",NA,NA
+NA,"33802647_1","33802647","",NA,NA,NA,NA,NA,"headache disorders",2.08,0.92,4.7,"odd ratio (OR)",NA,NA
+NA,"33953911_1","33953911","respiratory viral infections",NA,NA,NA,NA,NA,"headache",19,0.104,751,"odd ratio (OR)",NA,NA
+NA,"34129658_2","34129658","migraine",NA,NA,NA,NA,NA,"migraine",1.79,0.96,3.33,"odd ratio (OR)",NA,NA
+NA,"34129658_3","34129658","awake bruxism",NA,NA,NA,NA,NA,"awake bruxism",5.23,2.57,10.65,"odd ratio (OR)",NA,NA
+NA,"34186265_1","34186265","",NA,NA,NA,NA,NA,"post dural puncture headache",0.7,0.3,1.63,"relative risk (RR)",NA,NA
+NA,"34186265_2","34186265","",NA,NA,NA,NA,NA,"",0.48,0.22,1.05,"relative risk (RR)",NA,NA
+NA,"34186265_3","34186265","",NA,NA,NA,NA,NA,"",0.89,0.54,1.48,"relative risk (RR)",NA,NA
+NA,"34186265_4","34186265","low dose",NA,NA,NA,NA,NA,"post dural puncture headache",0.36,0.19,0.67,"relative risk (RR)",NA,NA
+NA,"34309832_1","34309832","HCRTR2 rs9357855 A allele",NA,NA,NA,NA,NA,"cluster headache",1.33,1.04,1.72,"odd ratio (OR)",NA,NA
+NA,"34309832_2","34309832","HCRTR2",NA,NA,NA,NA,NA,"cluster headache to triptan drugs",1.96,1.04,3.72,"odd ratio (OR)",NA,NA
+NA,"34581069_1","34581069","age",NA,NA,NA,NA,NA,"headache frequency",1.47,1.29,1.68,"relative risk (RR)",NA,NA
+NA,"34581069_2","34581069","age",NA,NA,NA,NA,NA,"upper age limit 55 60 years old",1.69,1.5,1.9,"relative risk (RR)",NA,NA
+NA,"34581069_3","34581069","upper age limit 55 60 years old",NA,NA,NA,NA,NA,"western medicine group",1.27,1.16,1.38,"relative risk (RR)",NA,NA
+NA,"34635194_1","34635194","possible confounders",NA,NA,NA,NA,NA,"headache",2.01,1.63,2.46,"odd ratio (OR)",NA,NA
+NA,"34635194_2","34635194","atomoxetine",NA,NA,NA,NA,NA,"headache",1.29,1.06,1.56,"odd ratio (OR)",NA,NA
+NA,"34635194_3","34635194","guanfacine",NA,NA,NA,NA,NA,"guanfacine",1.43,1.12,1.82,"odd ratio (OR)",NA,NA
+NA,"34635194_4","34635194","methylphenidate",NA,NA,NA,NA,NA,"headache",1.33,1.09,1.63,"odd ratio (OR)",NA,NA
+NA,"34704725_1","34704725","morphine",NA,NA,NA,NA,NA,"post dural puncture headache (post dural puncture headache",0.45,0.15,1.34,"odd ratio (OR)",NA,NA
+NA,"34704725_2","34704725","epidural blood patch",NA,NA,NA,NA,NA,"",0.4,0.08,1.95,"odd ratio (OR)",NA,NA
+NA,"34704725_3","34704725","Fentanyl",NA,NA,NA,NA,NA,"post dural puncture headache",0.35,0.01,13.77,"odd ratio (OR)",NA,NA
+NA,"34941197_1","34941197","greater occipital nerve block",NA,NA,NA,NA,NA,"intervention failure",0.4,0.19,0.82,"relative risk (RR)",NA,NA
+NA,"35029519_1","35029519","",NA,NA,NA,NA,NA,"all grade peripheral neuropathy",0.5,0.35,0.7,"relative risk (RR)",NA,NA
+NA,"35029519_2","35029519","neurotoxicity",NA,NA,NA,NA,NA,"all grade peripheral sensory neuropathy",0.49,0.3,0.79,"relative risk (RR)",NA,NA
+NA,"35029519_3","35029519","",NA,NA,NA,NA,NA,"all grade peripheral neuropathy",0.05,0.03,0.1,"relative risk (RR)",NA,NA
+NA,"35029519_4","35029519","RR, 0.11",NA,NA,NA,NA,NA,"all grade peripheral sensory neuropathy",0.11,0.05,0.23,"relative risk (RR)",NA,NA
+NA,"35064837_2","35064837","age",NA,NA,NA,NA,NA,"headache",1.3,1.21,1.39,"odd ratio (OR)",NA,NA
+NA,"35064837_3","35064837","EMF exposure duration",NA,NA,NA,NA,NA,"",1.41,1.22,1.61,"odd ratio (OR)",NA,NA
+NA,"35221992_1","35221992","",NA,NA,NA,NA,NA,"all cause dementia",1.35,1.21,1.5,"odd ratio (OR)",NA,NA
+NA,"35221992_2","35221992","headache",NA,NA,NA,NA,NA,"alzheimers disease",1.49,1.08,2.05,"odd ratio (OR)",NA,NA
+NA,"35221992_3","35221992","The history of any headache",NA,NA,NA,NA,NA,"VaD",1.72,1.32,2.25,"odd ratio (OR)",NA,NA
+NA,"35221992_4","35221992","females with a history of headache have a slightly higher risk of dementia",NA,NA,NA,NA,NA,"dementia",1.32,1.16,1.51,"odd ratio (OR)",NA,NA
+NA,"35221992_5","35221992","headache",NA,NA,NA,NA,NA,"dementia",1.38,1.22,1.56,"odd ratio (OR)",NA,NA
+NA,"35268502_1","35268502","the pain free rate",NA,NA,NA,NA,NA,"pain free rate",3.89,2.76,5.48,"odd ratio (OR)",NA,NA
+NA,"35268502_2","35268502","",NA,NA,NA,NA,NA,"pain free",0.4,0.19,0.82,"odd ratio (OR)",NA,NA
+NA,"35343597_1","35343597","high flow oxygen",NA,NA,NA,NA,NA,"",9,5.3,15.9,"odd ratio (OR)",NA,NA
+NA,"35343597_2","35343597","high flow oxygen",NA,NA,NA,NA,NA,"injectable sumatriptan",6.4,3.75,11.1,"odd ratio (OR)",NA,NA
+NA,"35343597_3","35343597","low flow oxygen",NA,NA,NA,NA,NA,"low flow oxygen",2.55,1.13,5.8,"odd ratio (OR)",NA,NA
+NA,"35343597_4","35343597","nasal spray zolmitriptan",NA,NA,NA,NA,NA,"nasal spray zolmitriptan",3.75,1.72,8.4,"odd ratio (OR)",NA,NA
+NA,"35343597_5","35343597","octreotide",NA,NA,NA,NA,NA,"octreotide",4.5,1.64,12.5,"odd ratio (OR)",NA,NA
+NA,"35343597_6","35343597","non invasive vagal nerve stimulation",NA,NA,NA,NA,NA,"non invasive vagal nerve stimulation",5.2,2.29,11.9,"odd ratio (OR)",NA,NA
+NA,"35343597_7","35343597","low flow oxygen",NA,NA,NA,NA,NA,"headache relief",2.67,1.21,5.9,"odd ratio (OR)",NA,NA
+NA,"35343597_8","35343597","octreotide",NA,NA,NA,NA,NA,"",3.2,1.17,8.8,"odd ratio (OR)",NA,NA
+NA,"35343597_9","35343597","nasal spray zolmitriptan",NA,NA,NA,NA,NA,"nVNS",3.69,1.63,8.4,"odd ratio (OR)",NA,NA
+NA,"35343597_10","35343597","Octreotide",NA,NA,NA,NA,NA,"Octreotide",4.1,1.71,10.5,"odd ratio (OR)",NA,NA
+NA,"35343597_11","35343597","sumatriptan",NA,NA,NA,NA,NA,"adverse events",2.4,1.39,4.2,"odd ratio (OR)",NA,NA
+NA,"35343597_12","35343597","nVNS",NA,NA,NA,NA,NA,"episodic cluster headache",4.9,1.89,14.1,"odd ratio (OR)",NA,NA
+NA,"35851952_1","35851952","obesity",NA,NA,NA,NA,NA,"migraine",1.21,1.09,1.34,"odd ratio (OR)",NA,NA
+NA,"35851952_2","35851952","obesity",NA,NA,NA,NA,NA,"migraine",1.28,1.15,1.43,"odd ratio (OR)",NA,NA
+NA,"35953857_2","35953857","History of headache",NA,NA,NA,NA,NA,"History of headache",3.24,2.26,4.65,"odd ratio (OR)",NA,NA
+NA,"35953857_3","35953857","female gender",NA,NA,NA,NA,NA,"female gender",2.06,1.44,2.96,"odd ratio (OR)",NA,NA
+NA,"35953857_4","35953857","midbrain lesions",NA,NA,NA,NA,NA,"midbrain lesions",3.56,1.86,6.83,"odd ratio (OR)",NA,NA
+NA,"35953857_5","35953857","posterior circulation stroke",NA,NA,NA,NA,NA,"posterior circulation stroke",2.13,1.14,4.32,"odd ratio (OR)",NA,NA
+NA,"35962748_1","35962748","akathisia",NA,NA,NA,NA,NA,"akathisia",0.83,0.43,1.61,"relative risk (RR)",NA,NA
+NA,"36143259_1","36143259","Cladribine",NA,NA,NA,NA,NA,"headache",1.2,1.006,1.42,"relative risk (RR)",NA,NA
+NA,"36259538_2","36259538","all cause headache",NA,NA,NA,NA,NA,"dry eye",1.586,1.409,1.785,"odd ratio (OR)",NA,NA
+NA,"36259538_3","36259538","Migraine headache, tension headache and cluster headache",NA,NA,NA,NA,NA,"dry eye",1.503,1.369,1.65,"odd ratio (OR)",NA,NA
+NA,"36259538_4","36259538","all cause headache",NA,NA,NA,NA,NA,"",1.61,1.585,1.635,"odd ratio (OR)",NA,NA
+NA,"36259538_5","36259538","all cause headache",NA,NA,NA,NA,NA,"",2.12,1.104,4.073,"odd ratio (OR)",NA,NA
+NA,"36259538_6","36259538","Migraine headache, tension headache and cluster headache",NA,NA,NA,NA,NA,"dry eye disease",1.707,1.291,2.258,"odd ratio (OR)",NA,NA
+NA,"36259538_7","36259538","all cause headache",NA,NA,NA,NA,NA,"dry eye",1.6,1.59,1.61,"odd ratio (OR)",NA,NA
+NA,"36259538_8","36259538","all cause headache",NA,NA,NA,NA,NA,"",1.44,1.096,1.893,"odd ratio (OR)",NA,NA
+NA,"36259538_9","36259538","all cause headache",NA,NA,NA,NA,NA,"dry eye",1.586,1.409,1.785,"odd ratio (OR)",NA,NA
+NA,"36422223_2","36422223","migraine",NA,NA,NA,NA,NA,"migraine",1.11,0.72,1.72,"odd ratio (OR)",NA,NA
+NA,"36422223_3","36422223","migraineurs",NA,NA,NA,NA,NA,"migraineurs",1.54,1.28,1.84,"odd ratio (OR)",NA,NA
+NA,"36422223_4","36422223","12 month migraine prevalence",NA,NA,NA,NA,NA,"12 month migraine",0.64,0.43,0.97,"odd ratio (OR)",NA,NA
