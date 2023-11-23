@@ -1,0 +1,12 @@
+name: forestPlotAppUser
+title: forestPlotAppUser
+username: 2adpb6-federico-sirna
+account: 2adpb6-federico-sirna
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10380892
+bundleId: 7921116
+url: https://2adpb6-federico-sirna.shinyapps.io/forestPlotAppUser/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
