@@ -1,5 +1,5 @@
 
-projectName <- "ironCkdLisa"
+projectName <- "allChronicFatigue"
 
 
 
@@ -18,7 +18,7 @@ library(feather) # to Export data in feather format
 currentPath <- rstudioapi::getSourceEditorContext()$path 
 
 currentPath2 <- currentPath %>% 
-  str_remove("forPythonCreateQuestionsV2.R")
+  str_remove("forPythonCreateQuestionsV3.R")
 
 setwd(currentPath2) 
 
