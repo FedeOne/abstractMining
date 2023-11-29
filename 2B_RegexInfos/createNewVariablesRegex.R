@@ -1,5 +1,5 @@
 
-projectName <- "ironCkdLisa"
+projectName <- "allChronicFatigue"
 
 
 library(rstudioapi)
@@ -115,7 +115,7 @@ data4 <- data3 %>% left_join(kw_object3)
 # 4: Definitions ####
 
 
-corpdefinition <- corpus(data6, text_field = "ABSTRACT", docid_field = "doc_id")
+corpdefinition <- corpus(data4, text_field = "ABSTRACT", docid_field = "doc_id")
 
 toks <- tokenize_sentence(corpdefinition) %>% tokens()
 
