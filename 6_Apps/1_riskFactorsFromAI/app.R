@@ -17,101 +17,194 @@ library(shinyBS)
 library(flextable)
 library(ggpubr)
 
-## 4.2 get datas from PHP ####
+# 1 func Load proj Name ####
 
 
-
-load_all <- function(){
-      
-      source("../../../credentials/connection.r")
-      
-      runStatementStud <- dbSendQuery(connection, "SELECT PMID, author,title ,studyPlan, yearPublication, projectName FROM studiesfromcode")
-      
-      general <- dbFetch(runStatementStud, n = -1)   
-      
-      dbDisconnect(connection)
-      
-      source("../../../credentials/connection.r")
-      
-      runStatementPop <- dbSendQuery(connection, "SELECT * FROM populationsfromcode WHERE ageClass IS NOT NULL;")
-      
-      populations <- dbFetch(runStatementPop, n = -1)  
-      
-      dbDisconnect(connection)
-      
-      source("../../../credentials/connection.r")
-      
-      runStatementRes <- dbSendQuery(connection, "SELECT * FROM resultsfromcode")
-      
-      results <- dbFetch(runStatementRes, n = -1)  
-      
-      dbDisconnect(connection)
-      
-      ## set some parameters
-      
-      set_flextable_defaults(big.mark = "")
-      
-      `%notin%` <- Negate(`%in%`)  
-      
-      general <- general %>% 
-        mutate(studyPlan = tolower(studyPlan))
-      
-      results2 <- results %>% 
-        mutate(across(c("result","icLow","icUpper"), ~as.numeric(.)),
-               exp1 = tolower(exp1),
-               outcome = tolower(outcome),
-               Association = paste0(round(result,2), " [", round(icLow,2),";", round(icUpper,2),"]"),
-               resultSignif = ifelse((icLow >1 & icUpper>1)| (icLow<1 & icUpper<1), 1,0 ),
-               MEASURE = ifelse(str_detect(measureType,"HR"),"HR",
-                                ifelse(str_detect(measureType,"OR"),"OR",
-                                       ifelse(str_detect(measureType,"RR"),"RR","Other")))
-        ) %>%  
-        left_join(select(populations, PMID,  popDisease) , by = "PMID") %>% 
-        left_join(select(general, PMID, author), by = "PMID") %>% 
-        rename( "Exposure" = exp1)
-      
-      
-      
-      return(list(general,populations, results2)) 
-
+loadProjectName <- function(){
+  
+  con <- dbConnect(MySQL(),
+                   dbname = "u551391167_sciresults",
+                   host = "srv934.hstgr.io",
+                   port = 3306,
+                   user = "u551391167_fedesci2",
+                   password = "Scire132!")
+  
+  
+  
+  runStatementProjName <- dbSendQuery(con, "SELECT DISTINCT projectName FROM studiesfromcode")
+  
+  projName <- dbFetch(runStatementProjName, n = -1)   
+  
+  dbDisconnect(con)
+  
+  return(projName)
 }
 
+# 2 func Load all ####
 
 
 
+dbName <- "u551391167_sciresults"
+user <- "u551391167_fedesci2"
+pwd <- "Scire132!"
 
+con <- dbConnect(MySQL(),
+                 dbname = dbName,
+                 host = "srv934.hstgr.io",
+                 port = 3306,
+                 user = user ,
+                 password = pwd )
+
+
+
+# 3: server ####
 
 server = function(input, output, session) { 
   
   
-  general <- load_all()[[1]]
-  populations <- load_all()[[2]]
-  results2 <- load_all()[[3]]
+  ## 3.1 Load project Names ####
+  projectNames <- loadProjectName()
+  
+  
+  # show project Names in input bar
   
   observe({
-    updateSelectInput(session, "projectName", choices = general$projectName, selected = head(general$projectName, 1))   ### to have possible inputs updating according to data
+    updateSelectInput(session, "projectName", choices = projectNames$projectName, selected = head(projectNames$projectName, 1))   ### to have possible inputs updating according to data
   })
   
   
+  ## 3.2 react query study
+  
+  query <- reactive({
+    paste0("SELECT PMID, author, title, studyPlan, yearPublication, projectName 
+          FROM studiesfromcode 
+          WHERE projectName IN ('", paste(input$projectName, collapse = "','"), "')")
+  })
+  
+  runStatementStud <-  reactive({ 
+    runStatementStud <- dbSendQuery(con, query()  )
+    runStatementStud
+    
+  })
+  
+  general <- reactive({
+    data <- dbFetch(runStatementStud(), n = -1) %>% 
+      mutate(studyPlan = tolower(studyPlan))
+    data
+  })
+  
+  observe({
+    # Trigger the query when input$projectName changes
+    general()
+  })
+  
+  observe({
+    # Disconnect from the database when the session ends
+    onSessionEnded(function() {
+      dbDisconnect(con)
+    })
+  })
+  
+  ## 3.3 react query pop
+  
+  queryPop <- reactive({
+    paste0("SELECT * FROM populationsfromcode 
+          WHERE projectName IN ('", paste(input$projectName, collapse = "','"), "')")
+  })
+  
+  runStatementPop <-  reactive({ 
+    runStatementPop <- dbSendQuery(con, queryPop()  )
+    runStatementPop
+    
+  })
+  
+  populations <- reactive({
+    populations <- dbFetch(runStatementPop(), n = -1)
+    populations
+  })
+  
+  observe({
+    # Trigger the query when input$projectName changes
+    populations()
+  })
+  
+  observe({
+    # Disconnect from the database when the session ends
+    onSessionEnded(function() {
+      dbDisconnect(con)
+    })
+  })
+  
+  ## 3.3 react query results 
+  
+  queryRes <- reactive({
+    paste0("SELECT * FROM resultsfromcode 
+          WHERE projectName IN ('", paste(input$projectName, collapse = "','"), "')")
+  })
+  
+  runStatementRes <-  reactive({ 
+    runStatementRes <- dbSendQuery(con, queryRes()  )
+    runStatementRes
+    
+  })
+  
+  results <- reactive({
+    results <- dbFetch(runStatementRes(), n = -1)
+    results
+  })
+  
+  observe({
+    # Trigger the query when input$projectName changes
+    results()
+  })
+  
+  observe({
+    # Disconnect from the database when the session ends
+    onSessionEnded(function() {
+      dbDisconnect(con)
+    })
+  })
+  
+  
+  results2 <- reactive({ 
+    results2 <- results() %>% 
+      mutate(across(c("result","icLow","icUpper"), ~as.numeric(.)),
+             exp1 = tolower(exp1),
+             outcome = tolower(outcome),
+             Association = paste0(round(result,2), " [", round(icLow,2),";", round(icUpper,2),"]"),
+             resultSignif = ifelse((icLow >1 & icUpper>1)| (icLow<1 & icUpper<1), 1,0 ),
+             MEASURE = ifelse(str_detect(measureType,"HR"),"HR",
+                              ifelse(str_detect(measureType,"OR"),"OR",
+                                     ifelse(str_detect(measureType,"RR"),"RR","Other")))
+      ) %>%  
+      left_join(select(populations(), PMID,  popDisease) , by = "PMID") %>% 
+      left_join(select(general(), PMID, author), by = "PMID") %>% 
+      rename( "Exposure" = exp1)
+    
+    results2
+  } )
   # 1: Data Select ----
-
+  
   selectedPMID <- reactive({
     
     proj <- input$projectName
     abs <- input$abstractSearch
     
     if(length(proj) == 0){
-      selectedPMID <- general %>% filter(grepl(input$titleSearch, tolower(title) ) )   
+      selectedPMID <- general() %>% filter(grepl(input$titleSearch, tolower(title) ) )   
       
     } else {
-      selectedPMID <- general %>% filter(projectName %in% proj)
+      selectedPMID <- general() %>% filter(projectName %in% proj)
     }
     
     selectedPMID
     
   })
   
+  
   ## 1.1: First page messages ----
+  
+  
   
   nStudies <- reactive({ 
     nStudies <- selectedPMID() %>% distinct(PMID) %>% nrow()
@@ -120,7 +213,7 @@ server = function(input, output, session) {
   })
   
   nHR <- reactive({ 
-    nHR <- results2 %>% 
+    nHR <- results2() %>% 
       filter(PMID %in% selectedPMID()$PMID, MEASURE == "HR" ) %>% 
       nrow()
     nHR 
@@ -128,7 +221,7 @@ server = function(input, output, session) {
   })
   
   nOR <- reactive({ 
-    nOR <- results2 %>% 
+    nOR <- results2() %>% 
       filter(PMID %in% selectedPMID()$PMID, MEASURE == "OR" ) %>% 
       nrow()
     nOR 
@@ -136,7 +229,7 @@ server = function(input, output, session) {
   })
   
   nRR <- reactive({ 
-    nRR <- results2 %>% 
+    nRR <- results2() %>% 
       filter(PMID %in% selectedPMID()$PMID, MEASURE == "RR" ) %>% 
       nrow()
     nRR 
@@ -178,29 +271,29 @@ server = function(input, output, session) {
     studyYearPlot()
   } )
   
+  
   # 2: Risk factors ####
   
   ## 2.1: results reactive
-    
+  
   dataReac <- reactive({ 
     
-    results2 %>% 
+    dataReac <-  results2() %>% 
       filter(PMID %in%selectedPMID()$PMID) %>% 
       filter(str_detect(outcome , input$outcome) )  
+    dataReac 
   })
   
-
+  
   ## 2.2: Risk factors table ----
   
   output$table <- DT::renderDataTable(DT::datatable(dataReac()%>% 
                                                       select(input$table1Variables) ) )
   
   
-
-  
   pValPlot <- function(){
- 
-     dataReac() %>%
+    
+    dataReac() %>%
       mutate(resultSignif2 = recode(resultSignif, `1` = "pValue <= 0.05" ,`0` = "pValue > 0.05"  )) %>% 
       ggplot() +
       geom_bar(aes(y = sum(resultSignif), x = measureType, fill =resultSignif2), position="fill", stat="identity") + 
@@ -224,7 +317,7 @@ server = function(input, output, session) {
   
   dataReacOut <- reactive({ 
     
-    results2 %>% 
+    results2() %>% 
       filter(PMID %in%selectedPMID()$PMID) %>% 
       filter(str_detect(Exposure , input$exposure) )  
   })
@@ -232,7 +325,7 @@ server = function(input, output, session) {
   # render table outcome ####
   
   output$tableOutcome <- DT::renderDataTable(DT::datatable(dataReacOut()%>% 
-                                                      select(input$table2Variables) ) )
+                                                             select(input$table2Variables) ) )
   
   # render p value plot
   
@@ -256,8 +349,10 @@ server = function(input, output, session) {
     req(dataReacOut())
     pValPlot2()
   } )
-    
-}
+  
+} # end Server
+
+# UI ####
 
 ui = navbarPage(
   theme =shinytheme("sandstone"),  ### navbar pour la barre de navigation
@@ -295,22 +390,22 @@ ui = navbarPage(
   
   tabPanel(h5("Risk factors"),
            column(6,
-           h3("Risk factors for a given outcome"),
-           p("Be careful with spaces they count as match, use regular expressions.")
+                  h3("Risk factors for a given outcome"),
+                  p("Be careful with spaces they count as match, use regular expressions.")
            ),
            column(6,
                   textInput(
-                     inputId = "outcome",
-                     label = "outcome",
-                     value = "mortality"),
-          
-            selectInput(inputId = "table1Variables",
-                       label = "Select variables in table",
-                       choices = c("PMID" ,"author" ,"Association","Exposure","outcome", "popDisease","projectName", "MEASURE"  ),
-                       selected = c("PMID", "Exposure", "Association" , "outcome"),
-                       multiple = TRUE
-                       ) 
-            ),
+                    inputId = "outcome",
+                    label = "outcome",
+                    value = "mortality"),
+                  
+                  selectInput(inputId = "table1Variables",
+                              label = "Select variables in table",
+                              choices = c("PMID" ,"author" ,"Association","Exposure","outcome", "popDisease","projectName", "MEASURE"  ),
+                              selected = c("PMID", "Exposure", "Association" , "outcome"),
+                              multiple = TRUE
+                  ) 
+           ),
            # column(6,
            #        textInput(inputId = "exposureMatch",
            #                  label = "How many times has this expoisure been studied?") 
@@ -321,8 +416,8 @@ ui = navbarPage(
            br(),
            br(),
            plotOutput("pValPlot",width = "60%")
-           ),   ### end first tab panel
-
+  ),   ### end first tab panel
+  
   tabPanel(h5("Outcomes"),
            h3("Outcome for a given exposure"),
            p("Be careful with spaces they count as match, use regular expressions."),
@@ -342,7 +437,7 @@ ui = navbarPage(
            plotOutput("pValPlot2",width = "60%")
   )
   
-  )
+)
 
 
 
