@@ -1,0 +1,420 @@
+---
+title: "bertQuestions"
+author: "Federico Sirna"
+date: "2023-12-19"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(reticulate)
+library(rstudioapi)
+library(tidyverse)
+library(feather)
+library(arrow)
+library(conflicted)
+
+
+# use_python("C:/Users/Federico/Desktop/8_Abstracts/4_Python/3_LlamaCodes/venv/Scripts/python.exe")
+use_python("C:/Users/Federico/anaconda3/envs/cudaEnv/python.exe")
+
+projectName <- "vacNemus2"
+
+`%notin%` <- Negate(`%in%`)
+conflicts_prefer(dplyr::filter)
+conflicts_prefer(dplyr::lag)
+
+```
+
+
+# 1: Set path and load Df
+
+```{r}
+
+currentPath <- rstudioapi::getSourceEditorContext()$path 
+
+currentPath2 <- currentPath %>% 
+  str_remove("bertQuestionsV2.Rmd")
+
+setwd(currentPath2) 
+
+
+
+pathDf <-  paste0('C:/Users/Federico/Desktop/0_GITHUB/abstractPython/2_forPython/1_toPythonDB/1_ORHRBert/ORHRBert', projectName,'.feather')
+
+df <- arrow:: read_feather(pathDf) %>% 
+  filter(!is.na(measureType),
+         !is.na(result))
+
+# df <- df[78:88,]
+
+df_py <- r_to_py(df)
+
+projNamePy <- r_to_py(projectName)
+```
+
+# 2: import python modules
+
+```{python}
+
+# import pyarrow
+import pandas as pd
+import numpy as np
+import time
+import os
+import torch
+from transformers import AutoTokenizer, AutoModelForQuestionAnswering, pipeline
+
+```
+
+# 3: Load Df in python
+
+```{python}
+
+os.environ["TOKENIZERS_PARALLELISM"] = "false"  # Disable download progress
+os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"  # Disable symlink warning
+
+projectName = r.projNamePy
+
+# path = 'C:/Users/Federico/Desktop/0_GITHUB/abstractPython/2_forPython/1_toPythonDB/1_pValORHRBert/pValORHRBert' + projectName +'.feather'
+
+df10 = r.df_py ## load df from R
+
+# df10 = df10.iloc[178:198]
+```
+
+
+
+```{python}
+
+# df10 = df.iloc[0:10]
+
+df10['ansExposure'] = ""
+
+
+```
+
+# 4: Load language model
+
+```{python}
+model_path = 'C:/Users/Federico/Desktop/0_GITHUB/abstractPython/7b_trainAnaconda/deBerta_finetuned/checkpoint-189'
+tokenizer = AutoTokenizer.from_pretrained(model_path)
+model = AutoModelForQuestionAnswering.from_pretrained(model_path).to("cuda")
+
+qa_model = pipeline("question-answering", model=model, tokenizer=tokenizer, device = 0)
+```
+
+# 5: Exposure
+
+
+```{python}
+# Iterate over rows
+
+
+for index, row in df10.iterrows():
+    # Get the context from the row and strip whitespace
+
+    contextExp = row['context'].strip()
+
+    # Check if the context is empty or contains only whitespace
+
+    if not contextExp:
+        contextExp = "empty"
+
+    # Get the questions for each column
+
+    quest_exp = row['question']
+
+
+    # Answer questions using the QA model
+
+    qa_result_freq = qa_model(question=quest_exp, context=contextExp)
+
+
+    # Set the 'answer' columns for the current row
+
+    df10.at[index, 'ansExposure'] = qa_result_freq["answer"]
+
+
+```
+
+
+```{r}
+
+toSave <- py$df10
+
+feather::write_feather(toSave, paste0("C:/Users/Federico/Desktop/0_GITHUB/abstractPython/3_python/1_outputspValOR/1_exposure/outPValORExpoFinal",projectName,".feather") )
+ 
+```
+
+
+
+# 6: Outcome
+
+```{python}
+
+condition = (df10['questionType'] == 'pValExpo') & (df10['result'].notna()) & (df10['result'] != '')
+
+df10['questOutcome'] =  'The odds or risk for which event, disease or medical condition are associated with or predicted by ' + df10['ansExposure'] + ' in the ' + df10['measureType'] + ' :' + df10['result'] + ' ?'
+    
+
+df10['ansOutcome'] = ""
+
+```
+
+
+
+```{python}
+
+for index, row in df10.iterrows():
+    # Get the context from the row and strip whitespace
+
+    contextOut = row['context'].strip()
+
+    # Check if the context is empty or contains only whitespace
+
+    if not contextOut:
+        contextOut = "empty"
+
+    # Get the questions for each column
+
+    quest_out = row['questOutcome']
+
+
+    # Answer questions using the QA model
+
+    qa_result_out = qa_model(question=quest_out, context=contextOut)
+
+
+    # Set the 'answer' columns for the current row
+
+    df10.at[index, 'ansOutcome'] = qa_result_out["answer"]
+
+
+
+
+```
+
+
+
+```{r}
+
+toSaveOut <- py$df10
+
+feather::write_feather(toSaveOut, paste0("C:/Users/Federico/Desktop/0_GITHUB/abstractPython/3_python/1_outputspValOR/2_outcome/outPValOROutFinal",projectName,".feather") )
+ 
+```
+
+
+
+# 7: Reference
+
+
+```{python}
+
+df10['questReference'] = 'The odds or risk expressed in the' + df10['measureType'] + ' :' + df10['result'] + ' are expressed in comparison to which reference group ? if you dont know return: ANSWERNOTFOUND'
+
+df10['ansReference'] = ""
+
+```
+
+```{python}
+
+for index, row in df10.iterrows():
+    # Get the context from the row and strip whitespace
+
+    contextRef = row['context'].strip()
+
+    # Check if the context is empty or contains only whitespace
+
+    if not contextRef:
+        contextRef = "empty"
+
+    # Get the questions for each column
+
+    quest_ref = row['questReference']
+
+
+    # Answer questions using the QA model
+
+    qa_result_ref = qa_model(question=quest_ref, context=contextRef)
+
+
+    # Set the 'answer' columns for the current row
+
+    df10.at[index, 'ansReference'] = qa_result_ref["answer"]
+
+
+
+
+```
+
+
+```{r}
+
+toSaveRef <- py$df10
+
+feather::write_feather(toSaveRef, paste0("C:/Users/Federico/Desktop/0_GITHUB/abstractPython/3_python/1_outputspValOR/3_reference/outPValORRefFinal",projectName,".feather") )
+ 
+```
+
+
+# 8: Populations
+
+## 8.1 Load pop Data
+
+```{r}
+
+dfPop <-  arrow::read_feather(paste0("C:/Users/Federico/Desktop/0_GITHUB/abstractPython/2_forPython/1_toPythonDB/2_PopDataForBert/popInfos",projectName,".feather") ) %>% 
+  mutate(ansParticipants = NA,
+         ansPopDiseaseTitle = NA,
+         ansPopDiseaseAbstract = NA,
+         ansCases = NA,
+         ansControls = NA)
+
+
+dfPop_py <- r_to_py(dfPop)
+
+
+```
+
+
+
+```{python}
+
+
+dfPopPy = r.dfPop_py ## load df from R
+
+# dfPopPy = dfPop.iloc[0:3]
+
+```
+
+
+
+```{python}
+for index, row in dfPopPy.iterrows():
+    # Get the context from the row and strip whitespace
+    contextPop = row['context'].strip()
+    contextTitle = row['contextTitle'].strip()
+
+    # Check if the context is empty or contains only whitespace
+    if not contextPop:
+        contextPop = "empty"
+
+    # Get the questions for each column
+    
+    quest_PopDiseaseTitle = row['questPopDiseaseTitle']
+    quest_PopDiseaseAbstract = row['questPopDiseaseAbstract']
+    
+    quest_Participants = row['questParticipants']
+    quest_Cases = row['questCases']
+    quest_Controls = row['questControls']
+
+
+    # Answer questions using the QA model for non-empty questions
+    qa_result_participants = qa_model(question=quest_Participants, context=contextPop)
+    qa_result_PopDiseaseTitle = qa_model(question=quest_PopDiseaseTitle, context=contextTitle)
+    qa_result_PopDiseaseAbstract = qa_model(question=quest_PopDiseaseAbstract, context=contextPop)
+    qa_result_cases = qa_model(question=quest_Cases, context=contextPop)
+    qa_result_controls = qa_model(question=quest_Controls, context=contextPop)
+
+
+    # Set the 'answer' columns for the current row
+    dfPopPy.at[index, 'ansParticipants'] = str(qa_result_participants["answer"])
+    dfPopPy.at[index, 'ansPopDiseaseTitle'] = str(qa_result_PopDiseaseTitle["answer"])
+    dfPopPy.at[index, 'ansPopDiseaseAbstract'] = str(qa_result_PopDiseaseAbstract["answer"])
+    dfPopPy.at[index, 'ansCases'] = str(qa_result_cases["answer"])
+    dfPopPy.at[index, 'ansControls'] = str(qa_result_controls["answer"])
+
+
+```
+
+
+
+```{r}
+
+toSavePop <- py$dfPopPy %>% 
+  as.data.frame()
+
+
+
+feather::write_feather(toSavePop, paste0("C:/Users/Federico/Desktop/0_GITHUB/abstractPython/3_python/2_outputPop/outPopFinal",projectName,".feather") )
+ 
+
+```
+
+
+# 9: Trial general infos
+
+## 8.1 Load trial Data
+
+```{r}
+
+dfTrials <-  arrow::read_feather(paste0("C:/Users/Federico/Desktop/0_GITHUB/abstractPython/2_forPython/1_toPythonDB/3_trialInfosForBert/trialInfos",projectName,".feather") ) %>% 
+  mutate(ansIntervention = NA,
+         ansEndpoint = NA,
+         ansCases = NA,
+         ansControls = NA,
+         ansParticipants = NA
+         )
+
+
+dfTrial_py <- r_to_py(dfTrials)
+
+```
+
+
+```{python}
+
+
+dfTrialsPy = r.dfTrial_py ## load df from R
+
+# dfPopPy = dfPop.iloc[0:3]
+
+```
+
+
+
+```{python}
+for index, row in dfTrialsPy.iterrows():
+    # Get the context from the row and strip whitespace
+    contextTrial = row['context'].strip()
+
+    # Check if the context is empty or contains only whitespace
+    if not contextTrial:
+        contextTrial = "empty"
+
+    # Get the questions for each column
+    quest_Intervention = row['questIntervention']
+    quest_Endpoint = row['questEndpoint']
+
+
+
+    # Answer questions using the QA model for non-empty questions
+    qa_result_intervention = qa_model(question=quest_Intervention, context=contextTrial)
+    qa_result_endpoint = qa_model(question=quest_Endpoint, context=contextTrial)
+   
+
+
+    # Set the 'answer' columns for the current row
+    dfTrialsPy.at[index, 'ansIntervention'] = str(qa_result_intervention["answer"])
+    dfTrialsPy.at[index, 'ansEndpoint'] = str(qa_result_endpoint["answer"])
+
+
+
+```
+
+
+
+```{r}
+
+toSaveTrial <- py$dfTrialsPy %>% 
+  as.data.frame()
+
+
+
+feather::write_feather(toSaveTrial, paste0("C:/Users/Federico/Desktop/0_GITHUB/abstractPython/3_python/3_outputTrial/outTrial",projectName,".feather") )
+ 
+
+```
