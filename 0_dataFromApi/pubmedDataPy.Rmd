@@ -1,0 +1,209 @@
+---
+title: "pMedApi"
+author: "Federico Sirna"
+date: "2023-12-13"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(reticulate)
+library(rstudioapi)
+library(tidyverse)
+library(feather)
+library(arrow)
+use_python("C:/Users/Federico/Desktop/8_Abstracts/4_Python/3_LlamaCodes/venv/Scripts/python.exe")
+
+projectName <- "familial_amyloid_neuropathy"
+
+```
+
+
+```{python}
+
+import pandas as pd
+
+from metapub import PubMedFetcher
+
+
+```
+
+```{python}
+# keyword="chronic fatigue[Title/Abstract]"
+
+keyword = '"amyloid neuropathies, familial"[MeSH Terms] OR ("amyloid"[All Fields] AND "neuropathies"[All Fields] AND "familial"[All Fields]) OR "familial amyloid neuropathies"[All Fields] OR ("familial"[All Fields] AND "amyloid"[All Fields] AND "neuropathy"[All Fields]) OR "familial amyloid neuropathy"[All Fields]'
+```
+
+
+```{python}
+
+fetch = PubMedFetcher()
+
+# get the  PMID for first 3 articles with keyword sepsis
+pmids = fetch.pmids_for_query(keyword, retmax=14000 )
+
+len(pmids)
+
+```
+
+
+
+```{python}
+
+import pandas as pd
+# get  articles
+# articles = {}
+# 
+# for pmid in pmids:
+#     articles[pmid] = fetch.article_by_pmid(pmid)
+
+art = articles.to_data
+
+
+
+```
+
+
+```{python}
+articles = {}
+counter = 0
+for pmid in pmids:
+    try:
+        articles[pmid] = fetch.article_by_pmid(pmid)
+        counter = counter + 1
+        print(counter)
+    except Exception as e:
+        # Handle the exception here, you can print an error message or take other actions
+        print(f"Failed to fetch article for PMID {pmid}. Error: {e}")
+        # You can also choose to set a default value or do nothing, depending on your requirements
+        # articles[pmid] = None
+```
+
+
+```{r}
+
+library(dplyr)
+
+# pmidsR <- py$pmids %>% 
+#   as.data.frame()
+
+allArticles <- py$articles
+
+pmid <- py$pmids %>% as.data.frame()
+
+
+
+
+```
+
+```{r}
+
+
+currentPath <- rstudioapi::getSourceEditorContext()$path 
+
+currentPath2 <- currentPath %>% 
+  str_remove("/pubmedDataPy.Rmd")
+
+setwd(currentPath2) 
+
+
+```
+
+
+
+
+```{r}
+## createDataframe
+
+allStudies <- data.frame()
+
+for (i in 1:length(allArticles)) {
+
+   PMID <-  allArticles[[i]]$pmid
+   TITLE <-  if (is.null(allArticles[[i]]$title)){
+     "NULL"
+   } else{
+     allArticles[[i]]$title %>%  unlist() %>%
+        paste(collapse = ", ")
+   }
+  
+  abstract <-
+          if (is.null(allArticles[[i]]$abstract)) {
+          "NULL"
+        } else{
+          allArticles[[i]]$abstract
+        }
+  authors <- if  (is.null(allArticles[[i]]$authors_str)) {
+            "NULL"
+        } else{
+          allArticles[[i]]$authors_str
+        }
+          
+  journalShort <- if  (is.null(allArticles[[i]]$journal)) {
+            "NULL"
+        } else{
+          allArticles[[i]]$journal
+        }
+  year <-  if  (is.null(allArticles[[i]]$year)) {
+            "NULL"
+        } else{
+          allArticles[[i]]$year
+        }
+ 
+  mesh <-  if (length(allArticles[[i]]$mesh) == 0) {
+          "NULL"
+        } else{
+          allArticles[[i]]$mesh %>%  unlist() %>%
+        paste(collapse = ", ")
+        }
+  
+  studyPlan <-  if (length(allArticles[[i]]$publication_types) == 0) {
+          "NULL"
+        } else{
+          allArticles[[i]]$publication_types %>%  unlist() %>%
+        paste(collapse = ", ")
+        }
+  
+  temp <- data.frame(
+                     PMID = PMID,
+                     TITLE = TITLE,
+                     abstract = abstract,
+                     authors = authors,
+                     journalShort = journalShort,
+                     year = year,
+                     mesh = mesh,
+                     studyPlan = studyPlan
+                     )
+  
+  allStudies <- allStudies %>% rbind(temp)
+ 
+}
+
+```
+
+
+```{r}
+
+feather::write_feather(allStudies, 
+              paste0("0_dbFeather/db", projectName, ".feather"))
+
+tibbleDb <- arrow::read_feather(paste0("0_dbFeather/db", projectName, ".feather")) %>% as_tibble()
+
+
+
+```
+
+
+```{r}
+tibbleDb2 <- tibbleDb %>% 
+ select( PMID,authors,journalShort,TITLE, "publicationYear" = year, studyPlan, "keywords" = mesh ,"ABSTRACT" = abstract)
+ 
+saveRDS(tibbleDb2, paste0("1_dbTibble/db",projectName,".rds") )
+```
+
+
+
+
+
+
