@@ -1,0 +1,12 @@
+name: 2_frequencyAppUser
+title: 2_frequencyAppUser
+username: 2adpb6-federico-sirna
+account: 2adpb6-federico-sirna
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10419731
+bundleId: 7908397
+url: https://2adpb6-federico-sirna.shinyapps.io/2_frequencyAppUser/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
